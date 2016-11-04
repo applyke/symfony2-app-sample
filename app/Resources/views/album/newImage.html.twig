@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Image creation</h1>
+    <div class="album-group">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input class="album-edit" type="submit" value="Create"/>
+        {{ form_end(form) }}
+        <a class="btn btn-primary" href="{{ path('_index') }}">Back to the list</a>
+    </div>
+{% endblock %}

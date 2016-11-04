@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Welcome To Image Gallery{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('public/css/main.css') }}"/>
+</head>
+<body>
+<div class="container-fluid">
+    <nav role="navigation" class="navbar navbar-inverse navbar-static-top" style="z-index: 1">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Image Gallery</a>
+        </div>
+
+    </nav>
+</div>
+
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+
+</body>
+</html>

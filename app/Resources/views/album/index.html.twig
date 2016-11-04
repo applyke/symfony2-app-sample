@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Albums list</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Code</th>
+            <th>Status</th>
+            <th>Created</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for album in albums %}
+            <tr>
+                <td>{{ album.id }}</td>
+                <td>{{ album.title }}</td>
+                <td>{{ album.code }}</td>
+                <td>{{ album.status }}</td>
+                <td>{% if album.created %}{{ album.created|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a class="btn btn-primary" href="{{ path('_edit', { 'id': album.id }) }}">Edit album</a>
+                            <a class="btn btn-primary" href="{{ path('_imageList', { 'id': album.id }) }}">Show images</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a class="btn btn-primary" href="{{ path('_new') }}">Create a new album</a>
+            <a class="btn btn-primary" href="{{ path('_albumList') }}">List albums wich contain up to 10 images</a>
+        </li>
+    </ul>
+{% endblock %}

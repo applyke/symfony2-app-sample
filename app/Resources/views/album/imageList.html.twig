@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>Images</h1>
+        <ul>
+            <li>
+                {#<a class="btn btn-primary" href="{{ path('_newImage',{ 'id': album.id }) }}">Create a new image</a>#}
+                <a class="btn btn-primary" href="{{ path('_index') }}">Back to the albums list</a>
+            </li>
+        </ul>
+        <table>
+            {% for image in pagination %}
+            <tr {% if loop.index is odd %}class="color"{% endif %}>
+
+                <div class="col-md-5">
+                    <img class="img-responsive" src="{{ image.path }}" alt="">
+                    {{ image.width }}*
+                    {{ image.height }} /
+                    {% if image.created %}{{ image.created|date('Y-m-d H:i:s') }}{% endif %}
+                </div>
+                {% endfor %}
+        </table>
+    </div>
+    <div class="container">
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
+{% endblock %}

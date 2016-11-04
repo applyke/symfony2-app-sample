@@ -1,0 +1,21 @@
+ul, menu, dir {
+    list-style-type:none;
+}
+.album-group{
+    width: 500px;
+    margin: 0 auto;
+}
+.album-group #gallerybundle_album label,
+.album-group #gallerybundle_album input{
+    display: block;
+    width: 100%;
+}
+
+.album-group .album-delete input,
+.album-group input.album-edit{
+    float: right;
+}
+
+/*.album-group #gallerybundle_album div{*/
+    /*display: inline-block;*/
+/*}*/
